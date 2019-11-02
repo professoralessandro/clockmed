@@ -1,6 +1,6 @@
 ﻿<?php
 
-class NiveisAcesso
+class NivelAcesso
 {
     //ATRIBUTOS
     private $idNivelAcesso;

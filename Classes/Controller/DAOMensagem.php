@@ -1,8 +1,8 @@
 ﻿<?php include_once("../../Conexao/Conexao.php"); ?>
-<?php include_once("../Model/Substancia.php"); ?>
+<?php include_once("../Model/Mensagem.php"); ?>
 <?php
 
-class DALUsuario {
+class DAOMensagem {
 
     //Propriedades
     private $conexao;
@@ -15,28 +15,30 @@ class DALUsuario {
 
     //METODOS GET E SET
     //METODOS
-    public function inserirSubstancia(Substancia $substancia) {
-        $sqlComand = "insert into substancias(nome, dataCadastro, observacoes, idMedicamento, ativo) values('";
-        $sqlComand = $sqlComand . $substancia->getNome() . "','";
-        $sqlComand = $sqlComand . $substancia->getDataCadastro() . "','";
-        $sqlComand = $sqlComand . $substancia->getObservacoes() . "','";
-        $sqlComand = $sqlComand . $substancia->getIdMedicamento() . "','";
-        $sqlComand = $sqlComand . $substancia->getAtivo() . "')";
+    public function inserirMensagem(Mensagem $mensagem) {
+        $sqlComand = "insert into mensagens(contexto, dataEmissao, prioridade, idDestinatario, idRemetente, ativo) values('";
+        $sqlComand = $sqlComand . $mensagem->getContexto() . "','";
+        $sqlComand = $sqlComand . $mensagem->getDataEmissao() . "','";
+        $sqlComand = $sqlComand . $mensagem->getPrioridade() . "','";
+        $sqlComand = $sqlComand . $mensagem->getIdDestinatario() . "','";
+        $sqlComand = $sqlComand . $mensagem->getIdRemetente() . "','";
+        $sqlComand = $sqlComand . $mensagem->getAtivo() . "')";
 
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
         $this->conexao->Desconectar();
     }
     
-    public function alterarSubstancia(Substancia $substancia) {
-        $sqlComand = "UPDATE substancias
-		SET nome = '" . $substancia->getNome() . "',
-		dataCadastro = '" . $substancia->getDataCadastro() . "',
-		observacoes = '" . $substancia->getObservacoes() . "',
-		idMedicamento = '" . $substancia->getIdMedicamento() . "',
-		ativo = '" . $substancia->getAtivo() . "'
+    public function alterarMensagem(Mensagem $mensagem) {
+        $sqlComand = "UPDATE mensagens
+		SET contexto = '" . $mensagem->getContexto() . "',
+		dataEmissao = '" . $mensagem->getDataEmissao(). "',
+		prioridade = '" . $mensagem->getPrioridade() . "',
+		idDestinatario = '" . $mensagem->getIdDestinatario() . "',
+                idRemetente = '" . $mensagem->getIdRemetente() . "',
+		ativo = '" . $mensagem->getAtivo() . "'
 		
-		WHERE idSubstancia = '" . $substancia->getIdSubstancia() . "'
+		WHERE idMensagem = '" . $mensagem->getIdMensagem() . "'
 		";
 
         $banco = $this->conexao->GetBanco();
@@ -44,15 +46,15 @@ class DALUsuario {
         $this->conexao->Desconectar();
     }
 
-    public function excluirSubstancia($id) {
-        $sqlComand = "delete from substancias where idSubstancia = " . $id;
+    public function excluirMensagem($id) {
+        $sqlComand = "delete from mensagens where idMensagem = " . $id;
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
         $this->conexao->Desconectar();
     }
 
-    public function localizarSubstancia($id) {
-        $sqlComand = "select * from substancias where idSubstancia = " . $id;
+    public function localizarMensagem($id) {
+        $sqlComand = "select * from mensagens where idMensagem = " . $id;
 
         $banco = $this->conexao->GetBanco();
         $retorno = $banco->query($sqlComand);
@@ -60,8 +62,8 @@ class DALUsuario {
         return $retorno;
     }
 
-    public function listarSubstancias() {
-        $sqlComand = " select * from substancias ";
+    public function listarMensagens() {
+        $sqlComand = " select * from mensagens ";
 
         $banco = $this->conexao->GetBanco();
         $retorno = $banco->query($sqlComand);

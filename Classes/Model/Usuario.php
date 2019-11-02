@@ -1,10 +1,12 @@
 ﻿<?php
-class Usuario
-{
+
+class Usuario {
+
     //ATRIBUTOS
     private $idUsuario;
     private $nome;
     private $rg;
+    private $cpf;
     private $dataNascimento;
     private $dataCadastro;
     private $email;
@@ -16,14 +18,14 @@ class Usuario
     private $imagem;
     private $observacoes;
     private $ativo;
+
     //ATRIBUTOS
-    
     //CONSTRUTORES
-    function __construct($idUsuario ="", $nome ="", $rg ="", $dataNascimento ="", $dataCadastro ="", $email ="", $senha ="", $idNivelAcesso ="", $ddd ="", $telefone ="", $sexo ="", $imagem ="", $observacoes ="", $ativo ="")
-                {
+    function __construct($idUsuario = "", $nome = "", $rg = "", $cpf = "", $dataNascimento = "", $dataCadastro = "", $email = "", $senha = "", $idNivelAcesso = "", $ddd = "", $telefone = "", $sexo = "", $imagem = "", $observacoes = "", $ativo = "") {
         $this->idUsuario = $idUsuario;
         $this->nome = $nome;
         $this->rg = $rg;
+        $this->cpf = $cpf;
         $this->dataNascimento = $dataNascimento;
         $this->dataCadastro = $dataCadastro;
         $this->email = $email;
@@ -36,11 +38,19 @@ class Usuario
         $this->observacoes = $observacoes;
         $this->ativo = $ativo;
     }
+
     //CONSTRUTORES
-    
     //PROPRIEDADES
     public function getIdUsuario() {
         return $this->idUsuario;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
 
     public function getNome() {
@@ -151,6 +161,6 @@ class Usuario
         $this->ativo = $ativo;
     }
 
-        //PROPRIEDADES
+    //PROPRIEDADES
 }
 ?>

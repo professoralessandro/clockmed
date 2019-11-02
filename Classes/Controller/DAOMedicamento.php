@@ -2,7 +2,7 @@
 <?php include_once("../Model/Medicamento.php"); ?>
 <?php
 
-class DALUsuario {
+class DAOMedicamento {
 
     //Propriedades
     private $conexao;
