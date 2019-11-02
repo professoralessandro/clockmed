@@ -1,59 +1,77 @@
-﻿<?php
+﻿<?php include_once("../../Conexao/Conexao.php"); ?>
+<?php include_once("../Model/Usuario.php"); ?>
+<?php
+class Substancia {
 
-class Substancia{
-
-//ATRIBUTOS
-    private $id;
+    //ATRIBUTOS
+    private $idSubstancia;
     private $nome;
-    private $email;
-    private $senha;
-
-//ATRIBUTOS
-//CONSTRUTORES
-    public function __construct($id = "", $nome = "", $email = "", $senha = "") {
-        $this->id = $id;
+    private $dataCadastro;
+    private $observacoes;
+    private $idMedicamento;
+    private $ativo;
+    //ATRIBUTOS
+    
+    //CONSTRUTORES
+    function __construct($idSubstancia = "", $nome = "", $dataCadastro = "", $observacoes = "", $idMedicamento = "", $ativo = "")
+    {
+        $this->idSubstancia = $idSubstancia;
         $this->nome = $nome;
-        $this->email = $email;
-        $this->senha = $senha;
+        $this->dataCadastro = $dataCadastro;
+        $this->observacoes = $observacoes;
+        $this->idMedicamento = $idMedicamento;
+        $this->ativo = $ativo;
     }
-
-//CONSTRUTORES
-//PROPRIEDADES
-
-    public function setId($valor) {
-        $this->id = $valor;
-    }
-
-    public function getId() {
-        return $this->id;
-    }
-
-    public function setNome($valor) {
-        $this->nome = $valor;
+    //CONSTRUTORES
+    
+    //PROPRIEDADES
+    public function getIdSubstancia() {
+        return $this->idSubstancia;
     }
 
     public function getNome() {
         return $this->nome;
     }
 
-    public function setEmail($valor) {
-        $this->email = $valor;
+    public function getDataCadastro() {
+        return $this->dataCadastro;
     }
 
-    public function getEmail() {
-        return $this->email;
+    public function getObservacoes() {
+        return $this->observacoes;
     }
 
-    public function setSenha($valor) {
-        $this->senha = $valor;
+    public function getIdMedicamento() {
+        return $this->idMedicamento;
     }
 
-    public function getSenha() {
-        return $this->senha;
+    public function getAtivo() {
+        return $this->ativo;
     }
 
-//PROPRIEDADES
+    public function setIdSubstancia($idSubstancia) {
+        $this->idSubstancia = $idSubstancia;
+    }
+
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    public function setDataCadastro($dataCadastro) {
+        $this->dataCadastro = $dataCadastro;
+    }
+
+    public function setObservacoes($observacoes) {
+        $this->observacoes = $observacoes;
+    }
+
+    public function setIdMedicamento($idMedicamento) {
+        $this->idMedicamento = $idMedicamento;
+    }
+
+    public function setAtivo($ativo) {
+        $this->ativo = $ativo;
+    }
+    //PROPRIEDADES
 }
-
-//CLASS=
 ?>
