@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FhmTec Login</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="../plugins/bootstrap4/css/bootstrap.min.css">
+    <script src="../plugins/bootstrap4/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../plugins/bootstrap4/js/popper.min.js"></script>
+    <script src="../plugins/bootstrap4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="col">
+            <button class="btn btn-info my-4 btn-block" type="button" id="btnNovo">Novo</button>
+        </div>
+
+        <form class="text-center border border-light p-5" action="#!">
+
+            <p class="h4 mb-4">Usuários</p>
+            <hr>
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuário</th>
+                        <th>Email</th>
+                        <th>Nível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Usuário 1</td>
+                        <td>usuario1@clockmed.ifsp.edu.br</td>
+                        <td>Administrador</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Usuário 2</td>
+                        <td>usuario2@clockmed.ifsp.edu.br</td>
+                        <td>Médico</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Usuário 3</td>
+                        <td>usuario3@clockmed.ifsp.edu.br</td>
+                        <td>Paciente</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+    </div>
+    </div>
+</body>
+<script>
+    $('#btnNovo').off('click').on('click', function () {
+        window.open('novo.html');
+    });
+</script>
+
+</html>
