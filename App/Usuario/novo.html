@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ClockMed - Novo Usuario</title>
+    <link rel="stylesheet" type="text/css" href="../plugins/bootstrap4/material/css/style.css">
+    <link rel="stylesheet" href="../plugins/bootstrap4/material/css/bootstrap.min.css">
+    <script src="../plugins/bootstrap4/material/js/jquery-3.4.1.min.js"></script>
+    <script src="../plugins/bootstrap4/material/js/popper.min.js"></script>
+    <script src="../plugins/bootstrap4/material/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="toast" data-autohide="true">
+            <div class="toast-header">
+                <strong class="mr-auto text-primary">Sucesso!</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            </div>
+            <div class="toast-body">
+                Usuário cadastrado, redirecionando para a página inicial..
+            </div>
+        </div>
+
+        <form class="text-center border border-light p-5" action="#!">
+
+            <p class="h4 mb-4">Novo Usuário</p>
+            <hr>
+
+            <div class="form-row mb-4">
+                <small id="usuaRGHelp" class="form-text text-muted mb-4 hide">Nome completo</small><br />
+                <div class="col">
+                    <input type="text" id="usuaNome" class="form-control" placeholder="Nome Completo">
+                </div>
+            </div>
+
+            <div class="form-row mb-4">
+                <small id="usuaCPFHelp" class="form-text text-muted mb-4 hide">CPF</small><br />
+                <div class="col">
+                    <input type="text" id="usuaCPF" class="form-control" placeholder="CPF"
+                        aria-describedby="usuaCPFHelp">
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <small id="usuaRGHelp" class="form-text text-muted mb-4 hide">RG</small><br />
+                <div class="col">
+                    <input type="text" id="usuaRG" class="form-control" placeholder="RG" aria-describedby="usuaRGHelp">
+                </div>
+                <small id="usuaNascHelp" class="form-text text-muted mb-4 hide">Data de Nascimento</small><br />
+                <div class="col">
+                    <input type="date" id="usuaNasc" class="form-control" aria-describedby="usuaNascHelp">
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <small id="usuaEmailHelp" class="form-text text-muted mb-4 hide">E-mail</small><br />
+                <div class="col">
+                    <input type="email" id="usuaEmail" class="form-control mb-4" placeholder="E-mail"
+                        aria-describedby="usuaEmailHelp">
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <small id="usuaSenhaHelp" class="form-text text-muted mb-4 hide">Senha</small><br />
+                <div class="col">
+                    <input type="password" id="usuaSenha" class="form-control" placeholder="Senha"
+                        aria-describedby="usuaSenhaHelp">
+                </div>
+                <small id="usuaNivelHelp" class="form-text text-muted mb-4 hide">Nível de Acesso</small><br />
+                <div class="col">
+                    <select id=-"usuaNivel" class="browser-default custom-select custom-select-lg mb-3"
+                        aria-describedby="usuaNivelHelp">
+                        <option value="1">Administrador(a)</option>
+                        <option value="2">Médico(a)</option>
+                        <option value="3">Enfermeiro</option>
+                        <option value="4" selected>Paciente</option>
+                        <option value="5">Familiar</option>
+                    </select>
+                </div>
+            </div>
+            <!--                
+                    <input type="text" id="usuaFone" class="form-control" placeholder="Telefone" aria-describedby="usuaFoneHelp">
+                <small id="usuaFoneHelp" class="form-text text-muted mb-4">
+                    opcional
+                </small>
+-->
+            <hr>
+            <div class="form-row mb-4">
+                <div class="col">
+                    <button class="btn btn-info my-4 btn-block" type="button" id="btnIncluir">Incluir</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning my-4 btn-block" type="button" id="btnVoltar">Cancelar</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+<script>
+    $('#btnVoltar').off('click').on('click', function () {
+        window.open('index.html');
+    });
+    $('#btnIncluir').off('click').on('click', function () {
+        $('.toast').toast({ delay: 2000 });
+        $('.toast').toast('show');
+    });
+    $('.toast').off().on('hidden.bs.toast', function () {
+        window.open('index.html');
+    });    
+</script>
+
+
+</html>
