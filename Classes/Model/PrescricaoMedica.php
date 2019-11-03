@@ -1,42 +1,31 @@
 ﻿<?php
 
-class ReceitaMedica
+class PrescricaoMedica
 {
     //ATRIBUTOS
     private $idReceitaMedica;
-    private $dataHoraAplicacao;
-    private $dataHoraAplicacaoEfetiva;
     private $observacoes;
     private $dataCadastro;
     private $ativo;
-    private $idUsuario;
     private $idMedicamento;
+    private $idUsuario;
     //ATRIBUTOS
     
     //CONSTRUTORES
-    function __construct($idReceitaMedica, $dataHoraAplicacao, $dataHoraAplicacaoEfetiva, $observacoes, $dataCadastro, $ativo, $idUsuario, $idMedicamento) {
+    function __construct($idReceitaMedica = "", $observacoes = "", $dataCadastro = "", $ativo = "", $idMedicamento = "", $idUsuario = "") {
         $this->idReceitaMedica = $idReceitaMedica;
-        $this->dataHoraAplicacao = $dataHoraAplicacao;
-        $this->dataHoraAplicacaoEfetiva = $dataHoraAplicacaoEfetiva;
         $this->observacoes = $observacoes;
         $this->dataCadastro = $dataCadastro;
         $this->ativo = $ativo;
-        $this->idUsuario = $idUsuario;
         $this->idMedicamento = $idMedicamento;
+        $this->idUsuario = $idUsuario;
     }
+
     //CONSTRUTORES
     
     //PROPRIEDADES
     public function getIdReceitaMedica() {
         return $this->idReceitaMedica;
-    }
-
-    public function getDataHoraAplicacao() {
-        return $this->dataHoraAplicacao;
-    }
-
-    public function getDataHoraAplicacaoEfetiva() {
-        return $this->dataHoraAplicacaoEfetiva;
     }
 
     public function getObservacoes() {
@@ -51,24 +40,16 @@ class ReceitaMedica
         return $this->ativo;
     }
 
-    public function getIdUsuario() {
-        return $this->idUsuario;
-    }
-
     public function getIdMedicamento() {
         return $this->idMedicamento;
     }
 
+    public function getIdUsuario() {
+        return $this->idUsuario;
+    }
+
     public function setIdReceitaMedica($idReceitaMedica) {
         $this->idReceitaMedica = $idReceitaMedica;
-    }
-
-    public function setDataHoraAplicacao($dataHoraAplicacao) {
-        $this->dataHoraAplicacao = $dataHoraAplicacao;
-    }
-
-    public function setDataHoraAplicacaoEfetiva($dataHoraAplicacaoEfetiva) {
-        $this->dataHoraAplicacaoEfetiva = $dataHoraAplicacaoEfetiva;
     }
 
     public function setObservacoes($observacoes) {
@@ -83,12 +64,12 @@ class ReceitaMedica
         $this->ativo = $ativo;
     }
 
-    public function setIdUsuario($idUsuario) {
-        $this->idUsuario = $idUsuario;
-    }
-
     public function setIdMedicamento($idMedicamento) {
         $this->idMedicamento = $idMedicamento;
+    }
+
+    public function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
     }
     //PROPRIEDADES
 }

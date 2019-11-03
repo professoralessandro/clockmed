@@ -2,7 +2,7 @@
 <?php include_once("../Model/ReceitaMedica.php"); ?>
 <?php
 
-class DALUsuario {
+class DAOPrescricaoMedica {
 
     //Propriedades
     private $conexao;
@@ -15,10 +15,8 @@ class DALUsuario {
 
     //METODOS GET E SET
     //METODOS
-    public function inserirReceitasMedica(ReceitaMedica $receitasMedica) {
-        $sqlComand = "insert into receitasMedica(dataHoraAplicacao, dataHoraAplicacaoEfetiva, observacoes, dataCadastro, idUsuario, idMedicamento, ativo) values('";
-        $sqlComand = $sqlComand . $receitasMedica->getDataHoraAplicacao() . "','";
-        $sqlComand = $sqlComand . $receitasMedica->getDataHoraAplicacaoEfetiva() . "','";
+    public function inserirPrescricaoMedica(ReceitaMedica $receitasMedica) {
+        $sqlComand = "insert into PrescricoesMedica(observacoes, dataCadastro, idUsuario, idMedicamento, ativo) values('";
         $sqlComand = $sqlComand . $receitasMedica->getObservacoes() . "','";
         $sqlComand = $sqlComand . $receitasMedica->getDataCadastro() . "','";
         $sqlComand = $sqlComand . $receitasMedica->getIdUsuario() . "','";
@@ -30,17 +28,15 @@ class DALUsuario {
         $this->conexao->Desconectar();
     }
     
-    public function alterarReceitasMedica(ReceitaMedica $receitasMedica) {
-        $sqlComand = "UPDATE receitasMedica
-		SET dataHoraAplicacao = '" . $receitasMedica->getDataHoraAplicacao() . "',
-		dataHoraAplicacaoEfetiva = '" . $receitasMedica->getDataHoraAplicacaoEfetiva() . "',
-		observacoes = '" . $receitasMedica->getObservacoes() . "',
+    public function alterarPrescricaoMedica(ReceitaMedica $receitasMedica) {
+        $sqlComand = "UPDATE PrescricoesMedica
+		SET observacoes = '" . $receitasMedica->getObservacoes() . "',
 		dataCadastro = '" . $receitasMedica->getDataCadastro() . "',
                 idUsuario = '" . $receitasMedica->getIdUsuario() . "',
                 idMedicamento = '" . $receitasMedica->getIdMedicamento() . "', 
 		ativo = '" . $receitasMedica->getAtivo() . "'
 		
-		WHERE idReceitaMedica = '" . $receitasMedica->getIdReceitaMedica() . "'
+		WHERE idPrescricaoMedica = '" . $receitasMedica->getIdReceitaMedica() . "'
 		";
 
         $banco = $this->conexao->GetBanco();
@@ -48,15 +44,15 @@ class DALUsuario {
         $this->conexao->Desconectar();
     }
 
-    public function excluirReceitasMedica($id) {
-        $sqlComand = "delete from receitasMedicas where idReceitaMedica = " . $id;
+    public function excluirPrescricaoMedica($id) {
+        $sqlComand = "delete from PrescricoesMedica where idReceitaMedica = " . $id;
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
         $this->conexao->Desconectar();
     }
 
-    public function localizarReceitasMedica($id) {
-        $sqlComand = "select * from receitasMedicas where idReceitaMedica = " . $id;
+    public function localizarPrescricaoMedica($id) {
+        $sqlComand = "select * from PrescricoesMedica where idPrescricaoMedica = " . $id;
 
         $banco = $this->conexao->GetBanco();
         $retorno = $banco->query($sqlComand);
@@ -64,8 +60,8 @@ class DALUsuario {
         return $retorno;
     }
 
-    public function listarReceitasMedicas() {
-        $sqlComand = " select * from receitasMedicas ";
+    public function listarPrescricoesMedica() {
+        $sqlComand = " select * from PrescricoesMedica ";
 
         $banco = $this->conexao->GetBanco();
         $retorno = $banco->query($sqlComand);
