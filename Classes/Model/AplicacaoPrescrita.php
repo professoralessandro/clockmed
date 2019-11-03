@@ -6,6 +6,7 @@ class AplicacaoPrescrita
     private $DataHoraAplicacao;
     private $quantidade;
     private $observacoes;
+    private $dataCadastro;
     private $idMedico;
     private $idPaciente;
     private $idMedicamento;
@@ -13,11 +14,12 @@ class AplicacaoPrescrita
     //ATRIBUTOS
     
     //CONSTRUTORES
-    function __construct($idAplicacaoPrescrita = "", $DataHoraAplicacao = "", $quantidade = "", $observacoes = "", $idMedico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
+    function __construct($idAplicacaoPrescrita = "", $DataHoraAplicacao = "", $quantidade = "", $observacoes = "", $dataCadastro = "", $idMedico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
         $this->idAplicacaoPrescrita = $idAplicacaoPrescrita;
         $this->DataHoraAplicacao = $DataHoraAplicacao;
         $this->quantidade = $quantidade;
         $this->observacoes = $observacoes;
+        $this->dataCadastro = $dataCadastro;
         $this->idMedico = $idMedico;
         $this->idPaciente = $idPaciente;
         $this->idMedicamento = $idMedicamento;
@@ -40,6 +42,10 @@ class AplicacaoPrescrita
 
     public function getObservacoes() {
         return $this->observacoes;
+    }
+
+    public function getDataCadastro() {
+        return $this->dataCadastro;
     }
 
     public function getIdMedico() {
@@ -72,6 +78,10 @@ class AplicacaoPrescrita
 
     public function setObservacoes($observacoes) {
         $this->observacoes = $observacoes;
+    }
+
+    public function setDataCadastro($dataCadastro) {
+        $this->dataCadastro = $dataCadastro;
     }
 
     public function setIdMedico($idMedico) {

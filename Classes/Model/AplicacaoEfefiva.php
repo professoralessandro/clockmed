@@ -3,9 +3,10 @@ class AplicacaoEfefiva
 {
     //ATRIBUTOS
     private $idAplicacaoEfetiva;
-    private $DataHoraAplicacaoEfetiva;
+    private $dataHoraAplicacaoEfetiva;
     private $quantidade;
     private $observacoes;
+    private $dataCadastro;
     private $idTecnico;
     private $idPaciente;
     private $idMedicamento;
@@ -13,16 +14,18 @@ class AplicacaoEfefiva
     //ATRIBUTOS
     
     //CONSTRUTORES
-    function __construct($idAplicacaoEfetiva = "", $DataHoraAplicacaoEfetiva = "", $quantidade = "", $observacoes = "", $idTecnico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
+    function __construct($idAplicacaoEfetiva = "", $dataHoraAplicacaoEfetiva = "", $quantidade = "", $observacoes = "", $dataCadastro = "", $idTecnico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
         $this->idAplicacaoEfetiva = $idAplicacaoEfetiva;
-        $this->DataHoraAplicacaoEfetiva = $DataHoraAplicacaoEfetiva;
+        $this->dataHoraAplicacaoEfetiva = $dataHoraAplicacaoEfetiva;
         $this->quantidade = $quantidade;
         $this->observacoes = $observacoes;
+        $this->dataCadastro = $dataCadastro;
         $this->idTecnico = $idTecnico;
         $this->idPaciente = $idPaciente;
         $this->idMedicamento = $idMedicamento;
         $this->idPrescricaoMedica = $idPrescricaoMedica;
     }
+
     //CONSTRUTORES
     
     //PROPRIEDADES
@@ -31,7 +34,7 @@ class AplicacaoEfefiva
     }
 
     public function getDataHoraAplicacaoEfetiva() {
-        return $this->DataHoraAplicacaoEfetiva;
+        return $this->dataHoraAplicacaoEfetiva;
     }
 
     public function getQuantidade() {
@@ -40,6 +43,10 @@ class AplicacaoEfefiva
 
     public function getObservacoes() {
         return $this->observacoes;
+    }
+
+    public function getDataCadastro() {
+        return $this->dataCadastro;
     }
 
     public function getIdTecnico() {
@@ -62,8 +69,8 @@ class AplicacaoEfefiva
         $this->idAplicacaoEfetiva = $idAplicacaoEfetiva;
     }
 
-    public function setDataHoraAplicacaoEfetiva($DataHoraAplicacaoEfetiva) {
-        $this->DataHoraAplicacaoEfetiva = $DataHoraAplicacaoEfetiva;
+    public function setDataHoraAplicacaoEfetiva($dataHoraAplicacaoEfetiva) {
+        $this->dataHoraAplicacaoEfetiva = $dataHoraAplicacaoEfetiva;
     }
 
     public function setQuantidade($quantidade) {
@@ -72,6 +79,10 @@ class AplicacaoEfefiva
 
     public function setObservacoes($observacoes) {
         $this->observacoes = $observacoes;
+    }
+
+    public function setDataCadastro($dataCadastro) {
+        $this->dataCadastro = $dataCadastro;
     }
 
     public function setIdTecnico($idTecnico) {
