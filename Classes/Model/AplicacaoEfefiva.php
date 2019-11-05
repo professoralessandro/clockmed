@@ -7,6 +7,8 @@ class AplicacaoEfefiva
     private $quantidade;
     private $observacoes;
     private $dataCadastro;
+    private $aplicado;
+    private $idMedico;
     private $idTecnico;
     private $idPaciente;
     private $idMedicamento;
@@ -14,18 +16,19 @@ class AplicacaoEfefiva
     //ATRIBUTOS
     
     //CONSTRUTORES
-    function __construct($idAplicacaoEfetiva = "", $dataHoraAplicacaoEfetiva = "", $quantidade = "", $observacoes = "", $dataCadastro = "", $idTecnico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
+    function __construct($idAplicacaoEfetiva = "", $dataHoraAplicacaoEfetiva = "", $quantidade = "", $observacoes = "", $dataCadastro = "", $aplicado = "", $idMedico = "", $idTecnico = "", $idPaciente = "", $idMedicamento = "", $idPrescricaoMedica = "") {
         $this->idAplicacaoEfetiva = $idAplicacaoEfetiva;
         $this->dataHoraAplicacaoEfetiva = $dataHoraAplicacaoEfetiva;
         $this->quantidade = $quantidade;
         $this->observacoes = $observacoes;
         $this->dataCadastro = $dataCadastro;
+        $this->aplicado = $aplicado;
+        $this->idMedico = $idMedico;
         $this->idTecnico = $idTecnico;
         $this->idPaciente = $idPaciente;
         $this->idMedicamento = $idMedicamento;
         $this->idPrescricaoMedica = $idPrescricaoMedica;
     }
-
     //CONSTRUTORES
     
     //PROPRIEDADES
@@ -47,6 +50,14 @@ class AplicacaoEfefiva
 
     public function getDataCadastro() {
         return $this->dataCadastro;
+    }
+
+    public function getAplicado() {
+        return $this->aplicado;
+    }
+
+    public function getIdMedico() {
+        return $this->idMedico;
     }
 
     public function getIdTecnico() {
@@ -83,6 +94,14 @@ class AplicacaoEfefiva
 
     public function setDataCadastro($dataCadastro) {
         $this->dataCadastro = $dataCadastro;
+    }
+
+    public function setAplicado($aplicado) {
+        $this->aplicado = $aplicado;
+    }
+
+    public function setIdMedico($idMedico) {
+        $this->idMedico = $idMedico;
     }
 
     public function setIdTecnico($idTecnico) {
