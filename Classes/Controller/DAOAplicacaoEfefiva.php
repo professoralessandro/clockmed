@@ -16,11 +16,13 @@ class DAOAplicacaoEfefiva {
     //METODOS GET E SET
     //METODOS
     public function inserirAplicacaoEfefiva(AplicacaoEfefiva $aplicacaoEfefiva) {
-        $sqlComand = "insert into AplicacoesEfetivas(dataHoraAplicacaoEfetiva, quantidade, observacoes, dataCadastro, idTecnico, idPaciente, idMedicamento, idPrescricaoMedica) values('";
+        $sqlComand = "insert into AplicacoesEfetivas(dataHoraAplicacaoEfetiva, quantidade, observacoes, dataCadastro, aplicado, idMedico, idTecnico, idPaciente, idMedicamento, idPrescricaoMedica) values('";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getDataHoraAplicacaoEfetiva() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getQuantidade() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getObservacoes() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getDataCadastro() . "','";
+        $sqlComand = $sqlComand . $aplicacaoEfefiva->getAplicado() . "','";
+        $sqlComand = $sqlComand . $aplicacaoEfefiva->getIdMedico() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getIdTecnico() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getIdPaciente() . "','";
         $sqlComand = $sqlComand . $aplicacaoEfefiva->getIdMedicamento() . "','";
@@ -36,7 +38,9 @@ class DAOAplicacaoEfefiva {
 		SET dataHoraAplicacaoEfetiva = '" . $aplicacaoEfefiva->getDataHoraAplicacaoEfetiva() . "',
 		quantidade = '" . $aplicacaoEfefiva->getQuantidade() . "',
 		observacoes = '" . $aplicacaoEfefiva->getObservacoes() . "',
-                dataCadastro = '" . $aplicacaoEfefiva->getDataCadastro() . "', 
+                dataCadastro = '" . $aplicacaoEfefiva->getDataCadastro() . "',
+                aplicado = '" . $aplicacaoEfefiva->getAplicado() . "',
+                idMedico = '" . $aplicacaoEfefiva->getIdMedico() . "',
 		idTecnico = '" . $aplicacaoEfefiva->getIdTecnico() . "',
                 idPaciente = '" . $aplicacaoEfefiva->getIdPaciente() . "',
                 idMedicamento = '" . $aplicacaoEfefiva->getIdMedicamento() . "',
