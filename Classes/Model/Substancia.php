@@ -1,7 +1,5 @@
-﻿<?php include_once("../../Conexao/Conexao.php"); ?>
-<?php include_once("../Model/Usuario.php"); ?>
 <?php
-class DAOUsuarioBack {
+class Substancia {
 
     //ATRIBUTOS
     private $idSubstancia;
